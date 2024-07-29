@@ -2,19 +2,19 @@
 <div class="col-md-4">
     <div class="form-floating">
         <%= form.label 'Candle 1', class: 'form-label' %>
-        <%= form.select 'candle_1', options_for_select(list), class: 'form-select'  %>
+        <%= form.select 'candle_1', options_for_select(list, data[:candle_1]), class: 'form-select'  %>
     </div>
 </div>
 <div class="col-md-4">
     <div class="form-floating">
         <%= form.label 'Candle 2', class: 'form-label' %>
-        <%= form.select 'candle_2', options_for_select(list), class: 'form-select'  %>
+        <%= form.select 'candle_2', options_for_select(list, data[:candle_2]), class: 'form-select'  %>
     </div>
 </div>
 <div class="col-md-4">
     <div class="form-floating">
         <%= form.label 'Candle 3', class: 'form-label' %>
-        <%= form.select 'candle_3', options_for_select(list), class: 'form-select'  %>
+        <%= form.select 'candle_3', options_for_select(list, data[:candle_3]), class: 'form-select'  %>
     </div>
 </div>
 </div>

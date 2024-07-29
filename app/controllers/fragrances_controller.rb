@@ -10,6 +10,7 @@ class FragrancesController < ApplicationController
 
     def create
         @fragrance = Fragrance.new(fragrance_params)
+        binding.pry
         if @fragrance.save!
             Candle.find_or_create_by(fragrance: @fragrance)
             redirect_to fragrances_path

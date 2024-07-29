@@ -1,31 +1,42 @@
 class OrdersController < ApplicationController
     def home 
-        @fragrance_list = Fragrance.pluck(:name)
-        @candle = Candle.new
+        @fragrance_list = Fragrance.order(:name).pluck(:name, :id)
+        @data = {}
         @errors = []
     end
 
     def create_order
-        @dummy = Candle.new
         service = OrderService.create_order(*build_order_param)
-        binding.pry
-        @errors = [service.error]
-        @fragrance_list = Fragrance.pluck(:name)
-        redirect_to fragrances_path
-        
-        if @errors
+        @fragrance_list = Fragrance.order(:name).pluck(:name, :id)
+        if service.success == false
+            flash.now[:alert] = service.message
+            @data = failed_params
         else
+            flash.now[:notice] = service.message
+            @data = {}
         end
+
+        render :home
     end
 
     def build_order_param
-        data = params[:candle]
-        fragrance_list = [data[:candle_1], data[:candle_2], data[:candle_3]]
-        candles =  Candle.joins(:fragrance).where(fragrance: {name: fragrance_list})
-        kit_quantity = data['quantity']
-        first_name = data['first_name']
-        last_name = data['last_name']
+        fragrance_list = [params[:candle_1], params[:candle_2], params[:candle_3]]
+        candles =  Candle.joins(:fragrance).where(fragrance: {id: fragrance_list})
+        kit_quantity = params['quantity']
+        first_name = params['first_name']
+        last_name = params['last_name']
         [candles, kit_quantity, first_name, last_name]
+    end
+
+    def failed_params
+        {
+            first_name: params['first_name'],
+            last_name: params['last_name'],
+            quantity: params['quantity'],
+            candle_1: params['candle_1'],
+            candle_2: params['candle_2'],
+            candle_3: params['candle_3']
+        }
     end
 
 end

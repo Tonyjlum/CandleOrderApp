@@ -26,7 +26,6 @@ class MondayApi
     end
 
     def submit_order
-        binding.pry
         request(create_order_mutation_request_body)
         handle_response
     end

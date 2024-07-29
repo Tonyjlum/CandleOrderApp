@@ -3,15 +3,14 @@
         Place an Order
     </span>
 
-    <%= form_with(model: Candle.new, url: create_order_path, method: :post) do |form| %>
-      <% if @errors.any? %>
-        <div class="alert alert-danger">
-          <h4><%= pluralize(@errors.count, "error") %> prohibited this order from being processed:</h4>
-          <ul>
-            <% @errors.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
+    <%= form_with(url: create_order_path, method: :post, local: true, data: {turbo: false}) do |form| %>
+        <% if flash.now[:alert] %>
+            <div class="alert alert-danger">
+            <%= flash.now[:alert] %>
+            </div>
+        <% elsif flash.now[:notice] %>
+            <div class="alert alert-success">
+            <%= flash.now[:notice] %>
         </div>
       <% end %>
 
@@ -20,26 +19,26 @@
                 <div class="col-md-4">
                     <div class="form-floating">
                         <%= form.label :first_name, class: '' %>
-                        <%= form.text_field :first_name, class: 'form-control' %>
+                        <%= form.text_field :first_name, class: 'form-control', value: @data[:first_name]%>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-floating">
                         <%= form.label :last_name, class: '' %>
-                        <%= form.text_field :last_name, class: 'form-control' %>
+                        <%= form.text_field :last_name, class: 'form-control', value: @data[:last_name] %>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-floating">
                         <%= form.label :quantity, class: "form-label" %>
-                        <%= form.number_field :quantity, class: 'form-control' %>
+                        <%= form.number_field :quantity, class: 'form-control', min: 0, value: @data[:quantity]%>
                     </div>
                 </div>
             </div>
         </div>
 
         <div>
-            <%= render 'fragrance_dropdown', list: @fragrance_list, form: form %>
+            <%= render 'fragrance_dropdown', list: @fragrance_list, form: form, data: @data%>
         </div>
 
         <div class="row col-12">

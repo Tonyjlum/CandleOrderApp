@@ -19,11 +19,9 @@ class OrderService
         service.create_order
         OpenStruct.new(order: service, message: 'Order was successfuly submitted.', success: true)
     rescue InvalidOrderConfigurationError, MondayApiError => error
-        #flash this error in controller
-        binding.pry
         OpenStruct.new(
             order: service,
-            error: error.message,
+            message: error.message,
             success: false
         )
     end
@@ -41,14 +39,14 @@ class OrderService
     def provided_only_three_candles?
         return true if @candle_array.length == 3
 
-        raise InvalidOrderConfigurationError.new("Invalid number of candles. Provided #{@candle_array.length}, expected 3.")
+        raise InvalidOrderConfigurationError.new("Please Provide three different fragrances.")
     end
 
     def has_three_unique_fragrances?
         uniq_fragrances_count = [@candle_1.fragrance_id, @candle_2.fragrance_id, @candle_3.fragrance_id].uniq.length
         return true if uniq_fragrances_count == 3
 
-        raise InvalidOrderConfigurationError.new("Invalid number of fragrances. Provided #{uniq_fragrances_count}, expected 3.")
+        raise InvalidOrderConfigurationError.new("Please Provide three different fragrances.")
     end
 
     def positive_kit_quantity_value?
