@@ -1,9 +1,5 @@
 <div class="card position-relative m-2" style="width: 10rem;">
   <div class="card-body">
-  <span class= 'delete_irl'>
-    <%= button_to 'X', destroy_fragrance_path(fragrance), method: :delete, class:'btn btn-outline-danger btn-sm' %>
-  </span>
-  <br/>
   <span>
     <%= link_to fragrance.name, edit_fragrance_path(fragrance) %>
   </span>

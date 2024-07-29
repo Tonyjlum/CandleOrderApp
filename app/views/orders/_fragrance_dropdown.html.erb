@@ -1,20 +1,26 @@
 <div class="row col-12">
-<div class="col-md-4">
-    <div class="form-floating">
-        <%= form.label 'Candle 1', class: 'form-label' %>
-        <%= form.select 'candle_1', options_for_select(list, data[:candle_1]), class: 'form-select'  %>
+    <div class="col-md-4">
+        <div class="input-group mb-4 mt-3 col-md-4">
+            <div class="input-group-prepend">
+                <label class="input-group-text" >1st Scent</label>
+                <%= form.select 'candle_1', options_for_select(list, data[:candle_1]), class: 'form-control custom_select'  %>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+    <div class="input-group mb-4 mt-3 col-md-4">
+        <div class="input-group-prepend">
+            <label class="input-group-text" >2nd Scent</label>
+            <%= form.select 'candle_2', options_for_select(list, data[:candle_2]), class: 'form-control custom_select'  %>
+        </div>
     </div>
 </div>
 <div class="col-md-4">
-    <div class="form-floating">
-        <%= form.label 'Candle 2', class: 'form-label' %>
-        <%= form.select 'candle_2', options_for_select(list, data[:candle_2]), class: 'form-select'  %>
+<div class="input-group mb-4 mt-3 col-md-4">
+    <div class="input-group-prepend">
+        <label class="input-group-text" >3rd Scent</label>
+        <%= form.select 'candle_3', options_for_select(list, data[:candle_3]), class: 'form-control custom_select'  %>
     </div>
 </div>
-<div class="col-md-4">
-    <div class="form-floating">
-        <%= form.label 'Candle 3', class: 'form-label' %>
-        <%= form.select 'candle_3', options_for_select(list, data[:candle_3]), class: 'form-select'  %>
-    </div>
 </div>
 </div>

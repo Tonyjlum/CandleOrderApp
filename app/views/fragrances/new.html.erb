@@ -2,9 +2,10 @@
     <%= render 'header'%>
     <%= form_for @fragrance, url: create_fragrance_path(@fragrance), method: :post do |form| %>
         <%= render 'fragrance_form', fragrance: @fragrance, form: form%>        
-      
-        <div class="actions ">
-            <%= form.submit "Create", class: 'btn btn-primary' %>
+        <div class="container pt-5 pb-5">
+        <div class="d-flex justify-content-center">
+        <%= form.submit "Create", class: 'btn btn-outline-primary' %>
         </div>
+      </div>
       <% end %>
 </div>

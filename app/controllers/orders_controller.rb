@@ -1,13 +1,13 @@
 class OrdersController < ApplicationController
     def home 
-        @fragrance_list = Fragrance.order(:name).pluck(:name, :id)
+        @fragrance_list = Fragrance.order(:name).pluck(:name, :id).prepend(['', nil])
         @data = {}
         @errors = []
     end
 
     def create_order
         service = OrderService.create_order(*build_order_param)
-        @fragrance_list = Fragrance.order(:name).pluck(:name, :id)
+        @fragrance_list = Fragrance.order(:name).pluck(:name, :id).prepend(['', nil])
         if service.success == false
             flash.now[:alert] = service.message
             @data = failed_params

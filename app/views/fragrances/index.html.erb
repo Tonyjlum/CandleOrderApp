@@ -1,8 +1,5 @@
 <div id='main_component'>
     <%= render 'header'%>
-    <span>
-        <%= button_to 'Add Scent', new_fragrance_path, method: :get %>
-    </span>
     <div id='story_box_container'>
         <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3" style="column-gap: 30px; padding-left: 25px">
             <% @fragrances.each.with_index do |fragrance| %>

@@ -1,7 +1,7 @@
 class FragrancesController < ApplicationController
 
     def index
-        @fragrances = Fragrance.all
+        @fragrances = Fragrance.order(:name).all
     end
 
     def new
@@ -10,7 +10,6 @@ class FragrancesController < ApplicationController
 
     def create
         @fragrance = Fragrance.new(fragrance_params)
-        binding.pry
         if @fragrance.save!
             Candle.find_or_create_by(fragrance: @fragrance)
             redirect_to fragrances_path
@@ -34,7 +33,7 @@ class FragrancesController < ApplicationController
 
     def destroy
         Fragrance.find_by(id: params[:id]).destroy
-        redirect_back(fallback_location: root_path, notice: 'testing')
+        redirect_to fragrances_path
     end
 
     def fragrance_params
