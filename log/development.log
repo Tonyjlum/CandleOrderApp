@@ -1,0 +1,669 @@
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-07-25 17:04:43.509005', '2024-07-25 17:04:43.509009') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateFragrance (20240725163824)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "fragrances" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "description" varchar NOT NULL, "category" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240725163824') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateFragrance (20240725163824)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.8ms)[0m  [1m[35mDROP TABLE "fragrances"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20240725163824'[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateFragrance (20240725163824)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "fragrances" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "description" varchar NOT NULL, "category" varchar NOT NULL, "image_irl" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240725163824') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFragrance Load (3.3ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."name" = ? AND "fragrances"."description" = ? AND "fragrances"."categoy" = ? AND "fragrances"."image_irl" = ? LIMIT ?[0m  [["name", "test_name"], ["description", "test_desc"], ["categoy", "test_cat"], ["image_irl", "https://cdn.pixabay.com/photo/2023/05/15/19/53/plant-7995882_1280.jpg"], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.8ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."name" = ? AND "fragrances"."description" = ? AND "fragrances"."category" = ? AND "fragrances"."image_irl" = ? LIMIT ?[0m  [["name", "test_name"], ["description", "test_desc"], ["category", "test_cat"], ["image_irl", "https://cdn.pixabay.com/photo/2023/05/15/19/53/plant-7995882_1280.jpg"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFragrance Create (2.5ms)[0m  [1m[32mINSERT INTO "fragrances" ("name", "description", "category", "image_irl", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "test_name"], ["description", "test_desc"], ["category", "test_cat"], ["image_irl", "https://cdn.pixabay.com/photo/2023/05/15/19/53/plant-7995882_1280.jpg"], ["created_at", "2024-07-25 17:48:22.425708"], ["updated_at", "2024-07-25 17:48:22.425708"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCandle (20240726150554)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "candles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "fragrance_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240726150554') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCandle (20240726150554)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.2ms)[0m  [1m[35mDROP TABLE "candles"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20240726150554'[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCandle (20240726150554)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "candles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "fragrance_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_candles_on_fragrance_id" ON "candles" ("fragrance_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240726150554') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFragrance Load (0.4ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."name" = ? AND "fragrances"."description" = ? AND "fragrances"."category" = ? AND "fragrances"."image_irl" = ? LIMIT ?[0m  [["name", "test_name"], ["description", "test_desc"], ["category", "test_cat"], ["image_irl", "https://cdn.pixabay.com/photo/2023/05/15/19/53/plant-7995882_1280.jpg"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFragrance Load (0.4ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."name" = ? AND "fragrances"."description" = ? AND "fragrances"."category" = ? AND "fragrances"."image_irl" = ? LIMIT ?[0m  [["name", "test_name"], ["description", "test_desc"], ["category", "test_cat"], ["image_irl", "https://cdn.pixabay.com/photo/2023/05/15/19/53/plant-7995882_1280.jpg"], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."name" = ? LIMIT ?[0m  [["name", "test_name"], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" WHERE "candles"."fragrance_id" = ? LIMIT ?[0m  [["fragrance_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCandle Create (0.5ms)[0m  [1m[32mINSERT INTO "candles" ("fragrance_id", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["fragrance_id", nil], ["created_at", "2024-07-26 15:10:14.434934"], ["updated_at", "2024-07-26 15:10:14.434934"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCandle Load (1.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCandle Load (0.4ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCandle Load (1.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCandle (20240726150554)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[35mDROP INDEX "index_candles_on_fragrance_id"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "candles"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20240726150554'[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCandle (20240726150554)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "candles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "fragrance_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_candles_on_fragrance_id" ON "candles" ("fragrance_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240726150554') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFragrance Load (0.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."name" = ? AND "fragrances"."description" = ? AND "fragrances"."category" = ? AND "fragrances"."image_irl" = ? LIMIT ?[0m  [["name", "test_name"], ["description", "test_desc"], ["category", "test_cat"], ["image_irl", "https://cdn.pixabay.com/photo/2023/05/15/19/53/plant-7995882_1280.jpg"], ["LIMIT", 1]]
+  [1m[36mCandle Load (1.0ms)[0m  [1m[34mSELECT "candles".* FROM "candles" WHERE "candles"."fragrance" = ? LIMIT ?[0m  [["fragrance", 1], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFragrance Load (0.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."name" = ? AND "fragrances"."description" = ? AND "fragrances"."category" = ? AND "fragrances"."image_irl" = ? LIMIT ?[0m  [["name", "test_name"], ["description", "test_desc"], ["category", "test_cat"], ["image_irl", "https://cdn.pixabay.com/photo/2023/05/15/19/53/plant-7995882_1280.jpg"], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" WHERE "candles"."fragrance_id" = ? LIMIT ?[0m  [["fragrance_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCandle Create (0.8ms)[0m  [1m[32mINSERT INTO "candles" ("fragrance_id", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["fragrance_id", 1], ["created_at", "2024-07-26 15:13:23.293364"], ["updated_at", "2024-07-26 15:13:23.293364"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mFragrance Load (2.6ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."candle_id" = ? LIMIT ?[0m  [["candle_id", 1], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mFragrance Load (0.5ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."candle_id" = ? LIMIT ?[0m  [["candle_id", 1], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCandle Load (0.4ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mFragrance Load (0.3ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."candle_id" = ? LIMIT ?[0m  [["candle_id", 1], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mFragrance Load (0.3ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."candle_id" = ? LIMIT ?[0m  [["candle_id", 1], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mFragrance Load (1.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."candle_id" = ? LIMIT ?[0m  [["candle_id", 1], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mFragrance Load (0.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" ORDER BY "fragrances"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCandle Load (1.9ms)[0m  [1m[34mSELECT "candles".* FROM "candles" WHERE "candles"."fragrance_id" = ? LIMIT ?[0m  [["fragrance_id", 1], ["LIMIT", 1]]
+  [1m[36mCandle Load (3.4ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFragrance Load (0.5ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."name" = ? AND "fragrances"."description" = ? AND "fragrances"."category" = ? AND "fragrances"."image_irl" = ? LIMIT ?[0m  [["name", "test_name"], ["description", "test_desc"], ["category", "test_cat"], ["image_irl", "https://cdn.pixabay.com/photo/2023/05/15/19/53/plant-7995882_1280.jpg"], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.5ms)[0m  [1m[34mSELECT "candles".* FROM "candles" WHERE "candles"."fragrance_id" = ? LIMIT ?[0m  [["fragrance_id", 1], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."name" = ? AND "fragrances"."description" = ? AND "fragrances"."category" = ? AND "fragrances"."image_irl" = ? LIMIT ?[0m  [["name", "test_name_2"], ["description", "test_desc_2"], ["category", "test_cat"], ["image_irl", "https://cdn.pixabay.com/photo/2023/05/15/19/53/plant-7995882_1280.jpg"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFragrance Create (4.2ms)[0m  [1m[32mINSERT INTO "fragrances" ("name", "description", "category", "image_irl", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "test_name_2"], ["description", "test_desc_2"], ["category", "test_cat"], ["image_irl", "https://cdn.pixabay.com/photo/2023/05/15/19/53/plant-7995882_1280.jpg"], ["created_at", "2024-07-26 16:21:35.756664"], ["updated_at", "2024-07-26 16:21:35.756664"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" WHERE "candles"."fragrance_id" = ? LIMIT ?[0m  [["fragrance_id", 1], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."name" = ? AND "fragrances"."description" = ? AND "fragrances"."category" = ? AND "fragrances"."image_irl" = ? LIMIT ?[0m  [["name", "test_name_3"], ["description", "test_desc_3"], ["category", "test_cat"], ["image_irl", "https://cdn.pixabay.com/photo/2023/05/15/19/53/plant-7995882_1280.jpg"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFragrance Create (2.5ms)[0m  [1m[32mINSERT INTO "fragrances" ("name", "description", "category", "image_irl", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "test_name_3"], ["description", "test_desc_3"], ["category", "test_cat"], ["image_irl", "https://cdn.pixabay.com/photo/2023/05/15/19/53/plant-7995882_1280.jpg"], ["created_at", "2024-07-26 16:21:35.767654"], ["updated_at", "2024-07-26 16:21:35.767654"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" WHERE "candles"."fragrance_id" = ? LIMIT ?[0m  [["fragrance_id", 1], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.5ms)[0m  [1m[34mSELECT "candles".* FROM "candles" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."name" = ? AND "fragrances"."description" = ? AND "fragrances"."category" = ? AND "fragrances"."image_irl" = ? LIMIT ?[0m  [["name", "test_name_1"], ["description", "test_desc_1"], ["category", "test_cat"], ["image_irl", "https://cdn.pixabay.com/photo/2023/05/15/19/53/plant-7995882_1280.jpg"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFragrance Create (0.4ms)[0m  [1m[32mINSERT INTO "fragrances" ("name", "description", "category", "image_irl", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "test_name_1"], ["description", "test_desc_1"], ["category", "test_cat"], ["image_irl", "https://cdn.pixabay.com/photo/2023/05/15/19/53/plant-7995882_1280.jpg"], ["created_at", "2024-07-26 16:22:27.652175"], ["updated_at", "2024-07-26 16:22:27.652175"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCandle Load (0.4ms)[0m  [1m[34mSELECT "candles".* FROM "candles" WHERE "candles"."fragrance_id" = ? LIMIT ?[0m  [["fragrance_id", 4], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCandle Create (0.3ms)[0m  [1m[32mINSERT INTO "candles" ("fragrance_id", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["fragrance_id", 4], ["created_at", "2024-07-26 16:22:27.690314"], ["updated_at", "2024-07-26 16:22:27.690314"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."name" = ? AND "fragrances"."description" = ? AND "fragrances"."category" = ? AND "fragrances"."image_irl" = ? LIMIT ?[0m  [["name", "test_name_2"], ["description", "test_desc_2"], ["category", "test_cat"], ["image_irl", "https://cdn.pixabay.com/photo/2023/05/15/19/53/plant-7995882_1280.jpg"], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" WHERE "candles"."fragrance_id" = ? LIMIT ?[0m  [["fragrance_id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFragrance Load (1.9ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCandle Create (0.1ms)[0m  [1m[32mINSERT INTO "candles" ("fragrance_id", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["fragrance_id", 2], ["created_at", "2024-07-26 16:22:27.703093"], ["updated_at", "2024-07-26 16:22:27.703093"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."name" = ? AND "fragrances"."description" = ? AND "fragrances"."category" = ? AND "fragrances"."image_irl" = ? LIMIT ?[0m  [["name", "test_name_3"], ["description", "test_desc_3"], ["category", "test_cat"], ["image_irl", "https://cdn.pixabay.com/photo/2023/05/15/19/53/plant-7995882_1280.jpg"], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" WHERE "candles"."fragrance_id" = ? LIMIT ?[0m  [["fragrance_id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFragrance Load (1.4ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCandle Create (0.2ms)[0m  [1m[32mINSERT INTO "candles" ("fragrance_id", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["fragrance_id", 3], ["created_at", "2024-07-26 16:22:27.711276"], ["updated_at", "2024-07-26 16:22:27.711276"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mFragrance Load (0.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mFragrance Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "fragrances"[0m
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" DESC LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" DESC LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" DESC LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mCandle Load (0.6ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" DESC LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" DESC LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" DESC LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" DESC LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" DESC LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mCandle Load (0.3ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" DESC LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" DESC LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" DESC LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" DESC LIMIT ?[0m  [["LIMIT", 3]]
+[dotenv] Set [36mMONDAY_API_KEY[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mMONDAY_API_KEY[0m and [36mMONDAY_BOARD_ID[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mMONDAY_API_KEY[0m and [36mMONDAY_BOARD_ID[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mCandle Load (0.5ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mFragrance Load (1.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[dotenv] Set [36mMONDAY_API_KEY[0m and [36mMONDAY_BOARD_ID[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCandle (20240726150554)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (8.9ms)[0m  [1m[35mDROP INDEX "index_candles_on_fragrance_id"[0m
+  [1m[35m (7.3ms)[0m  [1m[35mDROP TABLE "candles"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20240726150554'[0m
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mMONDAY_API_KEY[0m and [36mMONDAY_BOARD_ID[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateFragrance (20240725163824)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.2ms)[0m  [1m[35mDROP TABLE "fragrances"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20240725163824'[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mMONDAY_API_KEY[0m and [36mMONDAY_BOARD_ID[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateFragrance (20240725163824)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "fragrances" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "description" varchar NOT NULL, "category" varchar NOT NULL, "image_url" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240725163824') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateCandle (20240726150554)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "candles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "fragrance_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_candles_on_fragrance_id" ON "candles" ("fragrance_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240726150554') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mMONDAY_API_KEY[0m and [36mMONDAY_BOARD_ID[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."name" = ? AND "fragrances"."description" = ? AND "fragrances"."category" = ? AND "fragrances"."image_url" = ? LIMIT ?[0m  [["name", "Smokey"], ["description", "Smokey scent"], ["category", "basic"], ["image_url", ""], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFragrance Create (0.4ms)[0m  [1m[32mINSERT INTO "fragrances" ("name", "description", "category", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Smokey"], ["description", "Smokey scent"], ["category", "basic"], ["image_url", ""], ["created_at", "2024-07-28 22:21:39.264039"], ["updated_at", "2024-07-28 22:21:39.264039"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."name" = ? AND "fragrances"."description" = ? AND "fragrances"."category" = ? AND "fragrances"."image_url" = ? LIMIT ?[0m  [["name", "Fresh"], ["description", "Fresh scent"], ["category", "basic"], ["image_url", ""], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFragrance Create (1.3ms)[0m  [1m[32mINSERT INTO "fragrances" ("name", "description", "category", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Fresh"], ["description", "Fresh scent"], ["category", "basic"], ["image_url", ""], ["created_at", "2024-07-28 22:21:39.271498"], ["updated_at", "2024-07-28 22:21:39.271498"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."name" = ? AND "fragrances"."description" = ? AND "fragrances"."category" = ? AND "fragrances"."image_url" = ? LIMIT ?[0m  [["name", "Floral"], ["description", "Floral scent"], ["category", "basic"], ["image_url", ""], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFragrance Create (1.3ms)[0m  [1m[32mINSERT INTO "fragrances" ("name", "description", "category", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Floral"], ["description", "Floral scent"], ["category", "basic"], ["image_url", ""], ["created_at", "2024-07-28 22:21:39.278254"], ["updated_at", "2024-07-28 22:21:39.278254"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFragrance Load (0.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."name" = ? AND "fragrances"."description" = ? AND "fragrances"."category" = ? AND "fragrances"."image_url" = ? LIMIT ?[0m  [["name", "Herbacous"], ["description", "Herbacous scent"], ["category", "basic"], ["image_url", ""], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFragrance Create (1.1ms)[0m  [1m[32mINSERT INTO "fragrances" ("name", "description", "category", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Herbacous"], ["description", "Herbacous scent"], ["category", "basic"], ["image_url", ""], ["created_at", "2024-07-28 22:21:39.283190"], ["updated_at", "2024-07-28 22:21:39.283190"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."name" = ? AND "fragrances"."description" = ? AND "fragrances"."category" = ? AND "fragrances"."image_url" = ? LIMIT ?[0m  [["name", "Citrus"], ["description", "Citrus scent"], ["category", "basic"], ["image_url", ""], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFragrance Create (1.1ms)[0m  [1m[32mINSERT INTO "fragrances" ("name", "description", "category", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Citrus"], ["description", "Citrus scent"], ["category", "basic"], ["image_url", ""], ["created_at", "2024-07-28 22:21:39.287763"], ["updated_at", "2024-07-28 22:21:39.287763"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."name" = ? AND "fragrances"."description" = ? AND "fragrances"."category" = ? AND "fragrances"."image_url" = ? LIMIT ?[0m  [["name", "Woody"], ["description", "Woody scent"], ["category", "basic"], ["image_url", ""], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFragrance Create (1.1ms)[0m  [1m[32mINSERT INTO "fragrances" ("name", "description", "category", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Woody"], ["description", "Woody scent"], ["category", "basic"], ["image_url", ""], ["created_at", "2024-07-28 22:21:39.292309"], ["updated_at", "2024-07-28 22:21:39.292309"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" WHERE "candles"."fragrance_id" = ? LIMIT ?[0m  [["fragrance_id", 0], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCandle Load (0.0ms)[0m  [1m[34mSELECT "candles".* FROM "candles" WHERE "candles"."fragrance_id" = ? LIMIT ?[0m  [["fragrance_id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFragrance Load (1.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCandle Create (0.2ms)[0m  [1m[32mINSERT INTO "candles" ("fragrance_id", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["fragrance_id", 1], ["created_at", "2024-07-28 22:21:39.329233"], ["updated_at", "2024-07-28 22:21:39.329233"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCandle Load (0.0ms)[0m  [1m[34mSELECT "candles".* FROM "candles" WHERE "candles"."fragrance_id" = ? LIMIT ?[0m  [["fragrance_id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFragrance Load (1.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCandle Create (0.2ms)[0m  [1m[32mINSERT INTO "candles" ("fragrance_id", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["fragrance_id", 2], ["created_at", "2024-07-28 22:21:39.335525"], ["updated_at", "2024-07-28 22:21:39.335525"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" WHERE "candles"."fragrance_id" = ? LIMIT ?[0m  [["fragrance_id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFragrance Load (1.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCandle Create (0.1ms)[0m  [1m[32mINSERT INTO "candles" ("fragrance_id", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["fragrance_id", 3], ["created_at", "2024-07-28 22:21:39.342152"], ["updated_at", "2024-07-28 22:21:39.342152"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" WHERE "candles"."fragrance_id" = ? LIMIT ?[0m  [["fragrance_id", 4], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFragrance Load (1.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCandle Create (0.1ms)[0m  [1m[32mINSERT INTO "candles" ("fragrance_id", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["fragrance_id", 4], ["created_at", "2024-07-28 22:21:39.348546"], ["updated_at", "2024-07-28 22:21:39.348546"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" WHERE "candles"."fragrance_id" = ? LIMIT ?[0m  [["fragrance_id", 5], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFragrance Load (1.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCandle Create (0.1ms)[0m  [1m[32mINSERT INTO "candles" ("fragrance_id", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["fragrance_id", 5], ["created_at", "2024-07-28 22:21:39.354606"], ["updated_at", "2024-07-28 22:21:39.354606"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+[dotenv] Set [36mMONDAY_API_KEY[0m and [36mMONDAY_BOARD_ID[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mCandle Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "candles"[0m
+  [1m[36mFragrance Load (0.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."name" = ? AND "fragrances"."description" = ? AND "fragrances"."category" = ? AND "fragrances"."image_url" = ? LIMIT ?[0m  [["name", "Smokey"], ["description", "Smokey scent"], ["category", "basic"], ["image_url", ""], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."name" = ? AND "fragrances"."description" = ? AND "fragrances"."category" = ? AND "fragrances"."image_url" = ? LIMIT ?[0m  [["name", "Fresh"], ["description", "Fresh scent"], ["category", "basic"], ["image_url", ""], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."name" = ? AND "fragrances"."description" = ? AND "fragrances"."category" = ? AND "fragrances"."image_url" = ? LIMIT ?[0m  [["name", "Floral"], ["description", "Floral scent"], ["category", "basic"], ["image_url", ""], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.5ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."name" = ? AND "fragrances"."description" = ? AND "fragrances"."category" = ? AND "fragrances"."image_url" = ? LIMIT ?[0m  [["name", "Herbacous"], ["description", "Herbacous scent"], ["category", "basic"], ["image_url", ""], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."name" = ? AND "fragrances"."description" = ? AND "fragrances"."category" = ? AND "fragrances"."image_url" = ? LIMIT ?[0m  [["name", "Citrus"], ["description", "Citrus scent"], ["category", "basic"], ["image_url", ""], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."name" = ? AND "fragrances"."description" = ? AND "fragrances"."category" = ? AND "fragrances"."image_url" = ? LIMIT ?[0m  [["name", "Woody"], ["description", "Woody scent"], ["category", "basic"], ["image_url", ""], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" WHERE "candles"."fragrance_id" = ? LIMIT ?[0m  [["fragrance_id", 1], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" WHERE "candles"."fragrance_id" = ? LIMIT ?[0m  [["fragrance_id", 2], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" WHERE "candles"."fragrance_id" = ? LIMIT ?[0m  [["fragrance_id", 3], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" WHERE "candles"."fragrance_id" = ? LIMIT ?[0m  [["fragrance_id", 4], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" WHERE "candles"."fragrance_id" = ? LIMIT ?[0m  [["fragrance_id", 5], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" WHERE "candles"."fragrance_id" = ? LIMIT ?[0m  [["fragrance_id", 6], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFragrance Load (0.9ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCandle Create (0.5ms)[0m  [1m[32mINSERT INTO "candles" ("fragrance_id", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["fragrance_id", 6], ["created_at", "2024-07-28 22:22:09.487471"], ["updated_at", "2024-07-28 22:22:09.487471"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.7ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mCandle Load (0.3ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.3ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mFragrance Load (0.7ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.3ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.3ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.5ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.6ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.3ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.5ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.3ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.3ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.3ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.3ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.3ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.5ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.4ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.4ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.4ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (1.4ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.3ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.3ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.4ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.3ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.7ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mFragrance Load (0.3ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."name" = ? LIMIT ?[0m  [["name", "Herbaceous"], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."name" = ? LIMIT ?[0m  [["name", "Herbaceou"], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFragrance Update (0.8ms)[0m  [1m[33mUPDATE "fragrances" SET "name" = ?, "description" = ?, "updated_at" = ? WHERE "fragrances"."id" = ?[0m  [["name", "Herbaceous"], ["description", "Herbaceous scent"], ["updated_at", "2024-07-29 00:32:50.217309"], ["id", 4]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mFragrance Load (0.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.6ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.4ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mFragrance Load (0.5ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mFragrance Load (0.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mFragrance Load (0.3ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.3ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mFragrance Load (0.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mFragrance Load (0.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mFragrance Load (0.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.3ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mFragrance Load (0.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mFragrance Load (0.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.3ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.3ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mFragrance Load (0.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mFragrance Load (0.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mFragrance Load (0.4ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCandle Load (1.0ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mFragrance Load (0.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.4ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.3ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mFragrance Load (0.5ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.3ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mFragrance Load (0.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mFragrance Load (0.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mFragrance Load (0.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mFragrance Load (0.4ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFragrance Load (1.5ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" ORDER BY "fragrances"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCandle Load (0.3ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mFragrance Load (0.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" ASC LIMIT ?[0m  [["LIMIT", 6]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFragrance Create (27.3ms)[0m  [1m[32mINSERT INTO "fragrances" ("name", "description", "category", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "New Car"], ["description", "the new car smell"], ["category", "contemp"], ["image_url", nil], ["created_at", "2024-07-29 01:52:56.762789"], ["updated_at", "2024-07-29 01:52:56.762789"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFragrance Create (1.0ms)[0m  [1m[32mINSERT INTO "fragrances" ("name", "description", "category", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "New Car"], ["description", "the new car smell"], ["category", "contemp"], ["image_url", ""], ["created_at", "2024-07-29 01:52:56.762789"], ["updated_at", "2024-07-29 01:52:56.762789"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" DESC LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" ORDER BY "fragrances"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" ORDER BY "fragrances"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCandle Create (2.4ms)[0m  [1m[32mINSERT INTO "candles" ("fragrance_id", "created_at", "updated_at") VALUES (?, ?, ?) RETURNING "id"[0m  [["fragrance_id", 7], ["created_at", "2024-07-29 01:54:24.505771"], ["updated_at", "2024-07-29 01:54:24.505771"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" DESC LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mFragrance Load (0.3ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" DESC LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mFragrance Load (0.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" DESC LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" DESC LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" DESC LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mFragrance Load (0.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" DESC LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.2ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" DESC LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.8ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCandle Load (0.1ms)[0m  [1m[34mSELECT "candles".* FROM "candles" ORDER BY "candles"."id" DESC LIMIT ?[0m  [["LIMIT", 3]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
