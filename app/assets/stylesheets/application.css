@@ -1,15 +1,64 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+
+ #main_component {
+    width: 65%;
+    margin: 0 auto;
+    background-color: #f6f6ef;
+    padding-left: 1em;
+    max-width: 1000px;
+ }
+
+ #login_buttons {
+    float: right;
+    margin: 5 auto;
+    padding: 1em;
+ }
+
+ .button {
+    width: 6em;
+    margin-bottom: .25em;
+ }
+
+ #title {
+    font-size: 3em;
+    color: #ff6600;
+ }
+ #header {
+    padding-bottom: 1em;
+    padding-top: 1em;
+ }
+
+ .story_box {
+    color: grey;
+    padding-bottom: .5em;
+ }
+
+ .arrow {
+    padding-right: .25em;
+    text-decoration: none;
+    color: grey
+ }
+
+ .title_line {
+    text-decoration: none;
+    font-weight: bold;
+    color: black
+ }
+
+ .counter {
+    padding-left: .3em;
+    padding-right: .45em;
+ }
+
+ .favorited {
+   color: orangered !important;
+ }
+
+
+.delete_irl {
+    color: red !important;
+    text-decoration: none;
+    position: absolute;
+    top: .5em;
+    right: 5px;
+    z-index: 1;
+}

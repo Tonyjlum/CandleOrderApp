@@ -16,5 +16,7 @@ f4 = Fragrance.find_or_create_by(name:'Herbaceous', description: 'Herbacous scen
 f5 = Fragrance.find_or_create_by(name:'Citrus', description: 'Citrus scent', category: 'basic', image_url: ""  )
 f6 = Fragrance.find_or_create_by(name:'Woody', description: 'Woody scent', category: 'basic', image_url: ""  )
 
+f7 = Fragrance.find_or_create_by(name:'New Car', description: 'The fresh new scent of a \'new\' car!', category: 'basic', image_url: ""  )
+Candle.find_or_create_by(fragrance: f7)
 
 6.times { |n| Candle.find_or_create_by(fragrance_id: n+1)}

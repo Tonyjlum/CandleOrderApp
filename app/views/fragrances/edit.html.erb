@@ -1,0 +1,11 @@
+<div id='main_component'>
+    <%= render 'header'%>
+    <%= form_for @fragrance, url: update_fragrance_path(@fragrance), method: :patch do |form| %>
+        <%= render 'fragrance_form', fragrance: @fragrance, form: form%>        
+      
+        <div class="actions ">
+            <%= form.text_field :id, hidden: true, value: @fragrance.id %>
+            <%= form.submit "Update", class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+</div>

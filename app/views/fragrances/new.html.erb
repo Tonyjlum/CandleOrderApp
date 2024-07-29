@@ -1,0 +1,10 @@
+<div id='main_component'>
+    <%= render 'header'%>
+    <%= form_for @fragrance, url: create_fragrance_path(@fragrance), method: :post do |form| %>
+        <%= render 'fragrance_form', fragrance: @fragrance, form: form%>        
+      
+        <div class="actions ">
+            <%= form.submit "Create", class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+</div>
