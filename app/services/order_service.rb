@@ -20,6 +20,7 @@ class OrderService
         OpenStruct.new(order: service, message: 'Order was successfuly submitted.', success: true)
     rescue InvalidOrderConfigurationError, MondayApiError => error
         #flash this error in controller
+        binding.pry
         OpenStruct.new(
             order: service,
             error: error.message,

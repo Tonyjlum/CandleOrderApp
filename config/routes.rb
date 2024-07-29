@@ -7,12 +7,13 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "orders#home"
+
+  post 'orders/create_order', to: 'orders#create_order', as: 'create_order'
+
   get "fragrance", to: 'fragrances#index', as: 'fragrances'
   get "fragrance/new", to: 'fragrances#new', as: 'new_fragrance'
   post "fragrance", to: 'fragrances#create', as: 'create_fragrance'
   get "fragrance/:id/edit", to: 'fragrances#edit', as: 'edit_fragrance'
   patch "fragrance/:id", to: 'fragrances#update', as: 'update_fragrance'
   delete 'fragrance/:id', to: 'fragrances#destroy', as: 'destroy_fragrance'
-  # resource :fragrance, only: [:index, :show, :update, :destroy]
-
 end
