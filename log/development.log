@@ -22079,3 +22079,53 @@ Processing by OrdersController#home as HTML
 Completed 200 OK in 74ms (Views: 68.5ms | ActiveRecord: 0.1ms | Allocations: 7517)
 
 
+Started POST "/orders/create_order" for ::1 at 2024-07-29 23:29:58 -0400
+Processing by OrdersController#create_order as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "first_name"=>"Air", "last_name"=>"Lennox", "quantity"=>"39", "candle_1"=>"2", "candle_2"=>"3", "candle_3"=>"1", "commit"=>"Start Order"}
+  [1m[36mFragrance Pluck (0.2ms)[0m  [1m[34mSELECT "fragrances"."name", "fragrances"."id" FROM "fragrances" ORDER BY "fragrances"."name" ASC[0m
+  ↳ app/controllers/orders_controller.rb:39:in `before_action'
+  [1m[36mCandle Load (2.0ms)[0m  [1m[34mSELECT "candles".* FROM "candles" INNER JOIN "fragrances" "fragrance" ON "fragrance"."id" = "candles"."fragrance_id" WHERE "fragrance"."id" IN (?, ?, ?)[0m  [["id", 2], ["id", 3], ["id", 1]]
+  ↳ app/services/order_service.rb:9:in `initialize'
+  [1m[36mFragrance Load (0.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/order_service.rb:59:in `candle_lables'
+  [1m[36mFragrance Load (0.5ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/order_service.rb:59:in `candle_lables'
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/services/order_service.rb:59:in `candle_lables'
+  Rendering layout layouts/application.html.erb
+  Rendering orders/home.html.erb within layouts/application
+  Rendered orders/_error.html.erb (Duration: 0.9ms | Allocations: 200)
+  Rendered orders/_fragrance_dropdown.html.erb (Duration: 5.8ms | Allocations: 2293)
+  Rendered orders/home.html.erb within layouts/application (Duration: 21.3ms | Allocations: 6347)
+  Rendered layout layouts/application.html.erb (Duration: 630.1ms | Allocations: 23547)
+Completed 200 OK in 1453ms (Views: 638.5ms | ActiveRecord: 7.1ms | Allocations: 42265)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/stylesheets/application.css"):
+  
+Started POST "/orders/create_order" for ::1 at 2024-07-29 23:32:38 -0400
+Processing by OrdersController#create_order as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "first_name"=>"Teedra", "last_name"=>"Moses", "quantity"=>"230", "candle_1"=>"2", "candle_2"=>"31", "candle_3"=>"4", "commit"=>"Start Order"}
+  [1m[36mFragrance Pluck (0.3ms)[0m  [1m[34mSELECT "fragrances"."name", "fragrances"."id" FROM "fragrances" ORDER BY "fragrances"."name" ASC[0m
+  ↳ app/controllers/orders_controller.rb:39:in `before_action'
+  [1m[36mCandle Load (1.8ms)[0m  [1m[34mSELECT "candles".* FROM "candles" INNER JOIN "fragrances" "fragrance" ON "fragrance"."id" = "candles"."fragrance_id" WHERE "fragrance"."id" IN (?, ?, ?)[0m  [["id", 2], ["id", 31], ["id", 4]]
+  ↳ app/services/order_service.rb:9:in `initialize'
+  [1m[36mFragrance Load (0.2ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/services/order_service.rb:59:in `candle_lables'
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/services/order_service.rb:59:in `candle_lables'
+  [1m[36mFragrance Load (0.1ms)[0m  [1m[34mSELECT "fragrances".* FROM "fragrances" WHERE "fragrances"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/services/order_service.rb:59:in `candle_lables'
+  Rendering layout layouts/application.html.erb
+  Rendering orders/home.html.erb within layouts/application
+  Rendered orders/_error.html.erb (Duration: 1.2ms | Allocations: 200)
+  Rendered orders/_fragrance_dropdown.html.erb (Duration: 7.0ms | Allocations: 2293)
+  Rendered orders/home.html.erb within layouts/application (Duration: 25.6ms | Allocations: 6348)
+  Rendered layout layouts/application.html.erb (Duration: 89.4ms | Allocations: 23589)
+Completed 200 OK in 967ms (Views: 101.0ms | ActiveRecord: 8.7ms | Allocations: 42220)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/stylesheets/application.css"):
+  

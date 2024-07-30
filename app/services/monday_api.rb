@@ -8,7 +8,7 @@ class MondayApi
     API_KEY = ENV['MONDAY_API_KEY']
     BOARD_ID = ENV['MONDAY_BOARD_ID']
     
-    def initialize(order: nil, fragrance: nil)
+    def initialize(order: nil)
         @order = order
         # @retry = RETRY_LIMIT
         @response = nil
@@ -19,19 +19,8 @@ class MondayApi
         new(order: order).submit_order
     end 
 
-    def self.create_fragrance(fragrance)
-        #remove this logic, no longer needed
-        raise ArgumentError.new('Missing Fragrance') unless fragrance
-        new(fragrance: fragrance).create_fragrance
-    end
-
     def submit_order
         request(create_order_mutation_request_body)
-        handle_response
-    end
-
-    def create_fragrance(fragrance)
-        request(create_fragrance_request_body)
         handle_response
     end
 
@@ -65,10 +54,10 @@ class MondayApi
             query: <<-GRAPHQL
             mutation{
                 create_item(
-                  board_id: #{BOARD_ID},
-                  item_name: "#{@order.item_name}",
-                  create_labels_if_missing: true,
-                  column_values: \"\""#{create_order_column_values.to_json}"\"\"
+                    board_id: #{BOARD_ID},
+                    item_name: "#{@order.item_name}",
+                    create_labels_if_missing: true,
+                    column_values: \"\""#{create_order_column_values.to_json}"\"\"
                 ){
                     id
                 }
@@ -85,16 +74,6 @@ class MondayApi
             date_1: Date.today.to_s,
             text: @order.first_name,
             text6: @order.last_name,
-        }
-    end
-
-    def create_fragrance_request_body
-
-    end
-
-    def create_fragrance_column_values
-        {
-            dropdown: @fragrance.name
         }
     end
 end
