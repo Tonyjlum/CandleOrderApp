@@ -1,64 +1,29 @@
+#title {
+   font-size: 3em;
+   color: #ff6600;
+}
 
- #main_component {
-    width: 65%;
-    margin: 0 auto;
-    background-color: #f6f6ef;
-    padding-left: 1em;
-    max-width: 1000px;
- }
+#main-component {
+   width: 65%;
+   margin: 0 auto;
+   background-color: #f6f6ef;
+   padding-left: 1em;
+   max-width: 1000px;
+   border-radius: 2em;
+}
 
- #login_buttons {
-    float: right;
-    margin: 5 auto;
-    padding: 1em;
- }
+.frag-card {
+   width: 10rem;
+   min-height: 6rem;
+   border-radius: 2em;
+}
 
- .button {
-    width: 6em;
-    margin-bottom: .25em;
- }
+.frag-card-box {
+   column-gap: 30px; 
+   padding-left: 25px;
+   padding-right: 25px;
+}
 
- #title {
-    font-size: 3em;
-    color: #ff6600;
- }
- #header {
-    padding-bottom: 1em;
-    padding-top: 1em;
- }
-
- .story_box {
-    color: grey;
-    padding-bottom: .5em;
- }
-
- .arrow {
-    padding-right: .25em;
-    text-decoration: none;
-    color: grey
- }
-
- .title_line {
-    text-decoration: none;
-    font-weight: bold;
-    color: black
- }
-
- .counter {
-    padding-left: .3em;
-    padding-right: .45em;
- }
-
- .favorited {
-   color: orangered !important;
- }
-
-
-.delete_irl {
-    color: red !important;
-    text-decoration: none;
-    position: absolute;
-    top: .5em;
-    right: 5px;
-    z-index: 1;
+.small-font-size {
+   font-size: .75em;
 }

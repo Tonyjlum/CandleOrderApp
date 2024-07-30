@@ -1,12 +1,10 @@
-<div id='main_component'>
+<div id='main-component'>
     <%= render 'header'%>
     <%= form_for @fragrance, url: update_fragrance_path(@fragrance), method: :patch do |form| %>
         <%= render 'fragrance_form', fragrance: @fragrance, form: form %> 
-      
         <div class="actions d-flex justify-content-center">
             <%= form.text_field :id, hidden: true, value: @fragrance.id %>
             <%= form.submit "Update", class: 'btn btn-outline-primary btn-sm' %>
-
             </div>
     <% end %>
     <div class='d-flex justify-content-center pt-2 pb-5'>

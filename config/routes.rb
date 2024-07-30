@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root "orders#home"
 
   post 'orders/create_order', to: 'orders#create_order', as: 'create_order'
+  get 'orders/create_order', to: "orders#home"
 
   get "fragrance", to: 'fragrances#index', as: 'fragrances'
   get "fragrance/new", to: 'fragrances#new', as: 'new_fragrance'

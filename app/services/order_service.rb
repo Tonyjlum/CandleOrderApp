@@ -39,14 +39,14 @@ class OrderService
     def provided_only_three_candles?
         return true if @candle_array.length == 3
 
-        raise InvalidOrderConfigurationError.new("Please Provide three different fragrances.")
+        raise InvalidOrderConfigurationError.new("Please provide three different scents.")
     end
 
     def has_three_unique_fragrances?
         uniq_fragrances_count = [@candle_1.fragrance_id, @candle_2.fragrance_id, @candle_3.fragrance_id].uniq.length
         return true if uniq_fragrances_count == 3
 
-        raise InvalidOrderConfigurationError.new("Please Provide three different fragrances.")
+        raise InvalidOrderConfigurationError.new("Please provide three different scents.")
     end
 
     def positive_kit_quantity_value?

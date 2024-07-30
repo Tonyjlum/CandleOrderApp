@@ -1,7 +1,7 @@
-<div id='main_component' class='pb-5'>
+<div id='main-component' class='pb-5'>
     <%= render 'header'%>
     <div id='story_box_container'>
-        <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3" style="column-gap: 30px; padding-left: 25px">
+        <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 frag-card-box">
             <% @fragrances.each.with_index do |fragrance| %>
                 <%= render 'card', fragrance: fragrance %>
             <% end %>

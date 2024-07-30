@@ -1,8 +1,8 @@
-<div class="card position-relative m-2" style="width: 10rem;">
-  <div class="card-body">
-  <span>
-    <%= link_to fragrance.name, edit_fragrance_path(fragrance) %>
-  </span>
-    <p class="card-text"><%= fragrance.description %></p>
-  </div>
+<div class="card position-relative m-2 frag-card">
+    <div class="card-body">
+        <span>
+            <%= link_to fragrance.name, edit_fragrance_path(fragrance) %>
+        </span>
+        <p class="card-text small-font-size"><%= fragrance.description %></p>
+    </div>
 </div>
