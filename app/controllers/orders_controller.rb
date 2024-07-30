@@ -1,19 +1,15 @@
 class OrdersController < ApplicationController
+    before_action :before_action
     def home 
-        @fragrance_list = Fragrance.order(:name).pluck(:name, :id).prepend(['', nil])
-        @data = {}
-        @errors = []
     end
 
     def create_order
         service = OrderService.create_order(*build_order_param)
-        @fragrance_list = Fragrance.order(:name).pluck(:name, :id).prepend(['', nil])
         if service.success == false
             flash.now[:alert] = service.message
             @data = failed_params
         else
             flash.now[:notice] = service.message
-            @data = {}
         end
 
         render :home
@@ -37,6 +33,11 @@ class OrdersController < ApplicationController
             candle_2: params['candle_2'],
             candle_3: params['candle_3']
         }
+    end
+
+    def before_action
+        @fragrance_list = Fragrance.order(:name).pluck(:name, :id).prepend(['', nil])
+        @data = {}
     end
 
 end

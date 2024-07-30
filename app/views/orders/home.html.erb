@@ -1,18 +1,10 @@
+<%= render 'error' %>
 <div id='main_component'>
     <span id='title' align="center">
         Place an Order
     </span>
 
     <%= form_with(url: create_order_path, method: :post, local: true, data: {turbo: false}) do |form| %>
-        <% if flash.now[:alert] %>
-            <div class="alert alert-danger">
-            <%= flash.now[:alert] %>
-            </div>
-        <% elsif flash.now[:notice] %>
-            <div class="alert alert-success">
-            <%= flash.now[:notice] %>
-        </div>
-      <% end %>
 
         <div id='toprow'>
             <div class="row col-12">
@@ -42,8 +34,8 @@
         </div>
 
         <div class="row col-12">
-          <div class="form-group mt-3">
-            <%= form.submit 'Start Order', class: 'btn btn-primary' %>
+          <div class="form-group mt-3 col-12">
+            <%= form.submit 'Start Order', class: 'btn btn-primary col-12' %>
           </div>
         </div>
       <% end %>
